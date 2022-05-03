@@ -3,6 +3,8 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRoutesController;
+use App\Models\Part;
+use Carbon\CarbonInterval;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\Request as RequestAlias;
@@ -76,8 +78,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 // ----------------------------------------------------------------------------
 // working with routes inside the closure
-Route::any('/', function (Request $request)
-{
+Route::any('/', function (Request $request) {
     $header = $request->header('debug');
     if ($header != 'true' && !in_array($request->getMethod(), [RequestAlias::METHOD_POST, RequestAlias::METHOD_GET])) {
         abort(405);
@@ -91,11 +92,15 @@ Route::prefix('request-validation')->group(function () {
     Route::post('/form', [TestController::class, 'form']);
     Route::get('/', [TestController::class, 'index']);
     Route::post('/', [TestController::class, 'handleRequest']);
-} );
+});
 
 Route::get('/keyboard/', [TestController::class, 'keyboard']);
 
 Route::prefix('cms')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/{post:slug}', [HomeController::class, 'post']);
+});
+
+Route::get('/playground', function () {
+    dd(Part::nearToExpire(new CarbonInterval()));
 });
