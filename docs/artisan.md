@@ -28,7 +28,10 @@ php artisan <command>
 | `make:request CustomRequest`| create a custom request |
 | `make:rule CustomRule`| create a rule for asserting requests |
 | `make:model ModelName`| create a Model |
-| `make:model ModelName -mrc`| create a Model, resource controller and migration |
+| `make:model ModelName --migration`| create a Model with a migration |
+| `make:model ModelName -- seed `| create a Model with a seed |
+| `make:model ModelName --controller`| create a Model with a resource controller |
+| `make:model ModelName -mrc`| create a Model, resource controller, a migration and a seed|
 
 ### file maker commands (module)
 
