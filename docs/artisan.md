@@ -17,6 +17,8 @@ php artisan <command>
 | `migrate:rollback` | run all `down()` methods of all migrates desc |
 | `migrate:refresh` | run `migrate:rollback` + `migrate` |
 | `migrate:fresh` | drop all tables and run `migrate` |
+|`make:seeder SeederName`|create a seeder|
+|`db:seed --class=SeederName`|run seeder|
 
 ### file maker commands (normal)
 

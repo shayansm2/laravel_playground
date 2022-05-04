@@ -3,8 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRoutesController;
-use App\Models\Part;
-use Carbon\CarbonInterval;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\Request as RequestAlias;
@@ -102,5 +101,7 @@ Route::prefix('cms')->group(function () {
 });
 
 Route::get('/playground', function () {
-    dd(Part::nearToExpire(new CarbonInterval()));
+    dd(User::find(1)->name,
+        User::find(1)->short_name
+    );
 });
