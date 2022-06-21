@@ -6,19 +6,22 @@ php artisan <command>
 
 ### general commands
 
-| command                         | task                                          |
-|---------------------------------|-----------------------------------------------|
-| `list`                          | show list of commands                         |
-| `serve`                         | init Laravel                                  |
-| `route:list`                    | list all routes                               |
-| `make:migration migration_name` | create a migration                            |
-| `migrate`                       | run all `up()` methods for all migrates asc   |
-| `migrate:status`                | get the migrate status                        |
-| `migrate:rollback`              | run all `down()` methods of all migrates desc |
-| `migrate:refresh`               | run `migrate:rollback` + `migrate`            |
-| `migrate:fresh`                 | drop all tables and run `migrate`             |
-| `make:seeder SeederName`        | create a seeder                               |
-| `db:seed --class=SeederName`    | run seeder                                    |
+| command                          | task                                          |
+|----------------------------------|-----------------------------------------------|
+| `list`                           | show list of commands                         |
+| `serve`                          | init Laravel                                  |
+| `route:list`                     | list all routes                               |
+| `make:migration migration_name`  | create a migration                            |
+| `migrate`                        | run all `up()` methods for all migrates asc   |
+| `migrate:status`                 | get the migrate status                        |
+| `migrate:rollback`               | run all `down()` methods of all migrates desc |
+| `migrate:refresh`                | run `migrate:rollback` + `migrate`            |
+| `migrate:fresh`                  | drop all tables and run `migrate`             |
+| `make:seeder SeederName`         | create a seeder                               |
+| `db:seed --class=SeederName`     | run seeder                                    |
+| `make:test FeatureTestName`      | create a feature test                         |
+| `make:test UnitTestName -- unit` | create a unit test                            |
+| `test`                           | run tests                                     |
 
 ### file maker commands (normal)
 

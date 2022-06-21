@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRoutesController;
@@ -104,4 +105,11 @@ Route::get('/playground', function () {
     dd(User::find(1)->name,
         User::find(1)->short_name
     );
+});
+
+Route::prefix('panel')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm']);
+    Route::post('/login', [AuthController::class, 'attemptLogin']);
+    Route::get('/signup', [AuthController::class, 'showSignupForm']);
+    Route::post('/signup', [AuthController::class, 'attemptSignup']);
 });
