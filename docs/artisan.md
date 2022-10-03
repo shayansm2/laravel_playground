@@ -37,6 +37,7 @@ php artisan <command>
 | `make:model ModelName -- seed `             | create a Model with a seed                                  |
 | `make:model ModelName --controller`         | create a Model with a resource controller                   |
 | `make:model ModelName -mrc`                 | create a Model, resource controller, a migration and a seed |
+| `make:mail Mailable`                        | create a Mailable file                                      |
 
 ### file maker commands (module)
 
