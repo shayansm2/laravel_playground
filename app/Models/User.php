@@ -50,4 +50,9 @@ class User extends Authenticatable
             get: fn($value, $attributes) => explode(' ', $attributes['name'])[0]
         );
     }
+
+    public function scopeAdmin($query)
+    {
+        return $query->whereIsAdmin(true);
+    }
 }
