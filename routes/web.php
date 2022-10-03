@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRoutesController;
@@ -112,4 +113,9 @@ Route::prefix('panel')->group(function () {
     Route::post('/login', [AuthController::class, 'attemptLogin']);
     Route::get('/signup', [AuthController::class, 'showSignupForm']);
     Route::post('/signup', [AuthController::class, 'attemptSignup']);
+});
+
+Route::prefix('email')->group(function () {
+    Route::get('/message', [ContactController::class, 'sendMessage']);
+    Route::post('/contact-us', [ContactController::class, 'store']);
 });
