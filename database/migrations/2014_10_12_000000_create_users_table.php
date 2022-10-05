@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('premium_until')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });
     }
@@ -36,4 +38,4 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
-}
+};

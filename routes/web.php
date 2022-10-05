@@ -119,3 +119,13 @@ Route::prefix('email')->group(function () {
     Route::get('/message', [ContactController::class, 'sendMessage']);
     Route::post('/contact-us', [ContactController::class, 'store']);
 });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
