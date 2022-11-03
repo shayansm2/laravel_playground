@@ -6,22 +6,20 @@ php artisan <command>
 
 ### general commands
 
-| command                          | task                                          |
-|----------------------------------|-----------------------------------------------|
-| `list`                           | show list of commands                         |
-| `serve`                          | init Laravel                                  |
-| `route:list`                     | list all routes                               |
-| `make:migration migration_name`  | create a migration                            |
-| `migrate`                        | run all `up()` methods for all migrates asc   |
-| `migrate:status`                 | get the migrate status                        |
-| `migrate:rollback`               | run all `down()` methods of all migrates desc |
-| `migrate:refresh`                | run `migrate:rollback` + `migrate`            |
-| `migrate:fresh`                  | drop all tables and run `migrate`             |
-| `make:seeder SeederName`         | create a seeder                               |
-| `db:seed --class=SeederName`     | run seeder                                    |
-| `make:test FeatureTestName`      | create a feature test                         |
-| `make:test UnitTestName -- unit` | create a unit test                            |
-| `test`                           | run tests                                     |
+| command                         | task                                                                           |
+|---------------------------------|--------------------------------------------------------------------------------|
+| `list`                          | show list of commands                                                          |
+| `serve`                         | init Laravel                                                                   |
+| `route:list`                    | list all routes                                                                |
+| `make:migration migration_name` | create a migration                                                             |
+| `migrate`                       | run all `up()` methods for all migrates asc                                    |
+| `migrate:status`                | get the migrate status                                                         |
+| `migrate:rollback`              | run all `down()` methods of all migrates desc                                  |
+| `migrate:refresh`               | run `migrate:rollback` + `migrate`                                             |
+| `migrate:fresh`                 | drop all tables and run `migrate`                                              |
+| `db:seed --class=SeederName`    | run seeder                                                                     |
+| `test`                          | run tests                                                                      |
+| `event:generate`                | generate listeners and events based on EventServiceProvider (*don't use this*) |
 
 ### file maker commands (normal)
 
@@ -39,6 +37,11 @@ php artisan <command>
 | `make:model ModelName -mrc`                 | create a Model, resource controller, a migration and a seed |
 | `make:mail Mailable`                        | create a Mailable file                                      |
 | `make:policy PolicyName`                    | create a policy                                             |
+| `make:test FeatureTestName`                 | create a feature test                                       |
+| `make:test UnitTestName -- unit`            | create a unit test                                          |
+| `make:seeder SeederName`                    | create a seeder                                             |
+| `make:event EventName`                      | create an event                                             |
+| `make:listener ListenerName`                | create a listener                                           |
 
 ### file maker commands (module)
 
