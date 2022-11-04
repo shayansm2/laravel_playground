@@ -20,6 +20,7 @@ php artisan <command>
 | `db:seed --class=SeederName`    | run seeder                                                                     |
 | `test`                          | run tests                                                                      |
 | `event:generate`                | generate listeners and events based on EventServiceProvider (*don't use this*) |
+| `queue:table`                   | generate a migration for using database connections in queues                  |
 
 ### file maker commands (normal)
 
@@ -43,6 +44,7 @@ php artisan <command>
 | `make:seeder SeederName`                    | create a seeder                                             |
 | `make:event EventName`                      | create an event                                             |
 | `make:listener ListenerName`                | create a listener                                           |
+| `make:job JobName`                          | create a job                                                |
 
 ### file maker commands (module)
 
