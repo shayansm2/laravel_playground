@@ -27,6 +27,7 @@ php artisan <command>
 |---------------------------------------------|-------------------------------------------------------------|
 | `make:controller ControllerName`            | create a controller                                         |
 | `make:controller ControllerName --resource` | create a resource (crud) controller                         |
+| `make:controller ControllerName --api`      | create a api resource (crud) controller                     |
 | `make:middleware MiddlewareName`            | create a middleware                                         |
 | `make:request CustomRequest`                | create a custom request                                     |
 | `make:rule CustomRule`                      | create a rule for asserting requests                        |
