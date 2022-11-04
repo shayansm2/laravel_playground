@@ -3,11 +3,11 @@
 namespace App\Listeners;
 
 use App\Models\PostStatistic;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Events\Dispatcher;
 
 class PostEventSubscriber
 {
-    public function subscribe(Event $events)
+    public function subscribe(Dispatcher $events)
     {
         $events->listen(
             'posts.show',
