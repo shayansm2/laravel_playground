@@ -7,7 +7,7 @@ use Illuminate\Events\Dispatcher;
 
 class PostEventSubscriber
 {
-    public function subscribe(Dispatcher $events)
+    public function subscribe(Dispatcher $events): void
     {
         $events->listen(
             'posts.show',
@@ -20,7 +20,7 @@ class PostEventSubscriber
         );
     }
 
-    private function handlePostsShow(int $id)
+    public function handlePostsShow(int $id): void
     {
         PostStatistic::create([
             'post_id' => $id,
@@ -28,7 +28,7 @@ class PostEventSubscriber
         ]);
     }
 
-    private function handlePostsDestroy(int $id)
+    public function handlePostsDestroy(int $id): void
     {
         PostStatistic::create([
             'post_id' => $id,
