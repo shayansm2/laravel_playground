@@ -21,6 +21,7 @@ php artisan <command>
 | `test`                          | run tests                                                                      |
 | `event:generate`                | generate listeners and events based on EventServiceProvider (*don't use this*) |
 | `queue:table`                   | generate a migration for using database connections in queues                  |
+| `queue:work`                    | activate async (queue) jobs to run                                             |
 
 ### file maker commands (normal)
 
