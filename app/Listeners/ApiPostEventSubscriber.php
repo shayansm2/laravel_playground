@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Models\PostStatistic;
 use Illuminate\Events\Dispatcher;
 
-class PostEventSubscriber
+class ApiPostEventSubscriber
 {
     public function subscribe(Dispatcher $events): void
     {

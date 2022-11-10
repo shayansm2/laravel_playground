@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Events\HomePageVisited;
-use App\Listeners\PostEventSubscriber;
+use App\Listeners\ApiPostEventSubscriber;
 use App\Listeners\SaveStatistics;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -26,7 +26,7 @@ class EventServiceProvider extends ServiceProvider
     ];
 
     protected $subscribe = [
-        PostEventSubscriber::class,
+        ApiPostEventSubscriber::class,
     ];
 
     /**
