@@ -2,9 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\ExportDatabase;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 
 class PlaygroundCommand extends Command
 {
@@ -13,7 +11,7 @@ class PlaygroundCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'laravel:playground';
+    protected $signature = 'run:playground';
 
     /**
      * The console command description.
@@ -37,15 +35,8 @@ class PlaygroundCommand extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(): int
     {
-//        dd(get_object_vars(DB::table('parts')->limit(5)->get()->toArray()[0]));
-
-        $job = new ExportDatabase([
-            'parts' => __DIR__ . '/parts.csv',
-        ]);
-        $job->handle();
-
         return 0;
     }
 }
