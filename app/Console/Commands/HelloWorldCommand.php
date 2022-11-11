@@ -2,16 +2,17 @@
 
 namespace App\Console\Commands;
 
+use App\Models\User;
 use Illuminate\Console\Command;
 
-class PlaygroundCommand extends Command
+class HelloWorldCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'run:playground';
+    protected $signature = 'hello:world';
 
     /**
      * The console command description.

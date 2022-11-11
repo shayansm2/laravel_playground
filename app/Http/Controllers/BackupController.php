@@ -9,9 +9,7 @@ class BackupController extends Controller
 {
     public function dispatchUserBackupJob(int $userId, string $outputFilepath)
     {
-        $user = User::find($userId);
-
-        if ($user) {
+        if (User::find($userId)) {
             BackupUserData::dispatch($userId, $outputFilepath);
         }
     }

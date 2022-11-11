@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 
 class BackupUserData implements ShouldQueue
 {
@@ -36,15 +37,10 @@ class BackupUserData implements ShouldQueue
     {
         $user = User::find($this->userId);
 
-        $path = __DIR__ . "/../../public/backups";
-
-        if (!is_dir($path)) {
-            mkdir($path, 0777, true);
+        if (!Storage::disk('public')->exists('backups')) {
+            Storage::disk('public')->makeDirectory('backups');
         }
 
-        file_put_contents(
-            $path . '/' . $this->fileName . '.json',
-            json_encode($user->attributesToArray())
-        );
+        Storage::disk('public')->put('backups/' . $this->fileName, $user->toJson());
     }
 }

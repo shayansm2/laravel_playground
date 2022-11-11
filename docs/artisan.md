@@ -11,7 +11,6 @@ php artisan <command>
 | `list`                          | show list of commands                                                          |
 | `serve`                         | init Laravel                                                                   |
 | `route:list`                    | list all routes                                                                |
-| `make:migration migration_name` | create a migration                                                             |
 | `migrate`                       | run all `up()` methods for all migrates asc                                    |
 | `migrate:status`                | get the migrate status                                                         |
 | `migrate:rollback`              | run all `down()` methods of all migrates desc                                  |
@@ -19,6 +18,7 @@ php artisan <command>
 | `migrate:fresh`                 | drop all tables and run `migrate`                                              |
 | `db:seed --class=SeederName`    | run seeder                                                                     |
 | `test`                          | run tests                                                                      |
+| `test --filter specificTest`    | run a specific test                                                            |
 | `event:generate`                | generate listeners and events based on EventServiceProvider (*don't use this*) |
 | `queue:table`                   | generate a migration for using database connections in queues                  |
 | `queue:work`                    | activate async (queue) jobs to run                                             |
@@ -38,6 +38,7 @@ php artisan <command>
 | `make:model ModelName -- seed `             | create a Model with a seed                                  |
 | `make:model ModelName --controller`         | create a Model with a resource controller                   |
 | `make:model ModelName -mrc`                 | create a Model, resource controller, a migration and a seed |
+| `make:migration migration_name`             | create a migration                                          |
 | `make:mail Mailable`                        | create a Mailable file                                      |
 | `make:policy PolicyName`                    | create a policy                                             |
 | `make:test FeatureTestName`                 | create a feature test                                       |
