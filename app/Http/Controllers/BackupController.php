@@ -10,7 +10,7 @@ class BackupController extends Controller
     public function dispatchUserBackupJob(int $userId, string $outputFilepath)
     {
         if (User::find($userId)) {
-            BackupUserData::dispatch($userId, $outputFilepath);
+            BackupUserData::dispatch($userId, $outputFilepath)->onQueue('backups');
         }
     }
 }
