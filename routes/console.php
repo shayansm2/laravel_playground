@@ -36,3 +36,9 @@ Artisan::command(
     function (int $empId, string $date, int $hours) {
         PayRollCommand::PostTimeCard($empId, $date, $hours);
     })->purpose('Use Case 3: Post a Time Card');
+
+Artisan::command(
+    'SalesReceipt {empId} {date} {amount}',
+    function (int $empId, string $date, int $amount) {
+        PayRollCommand::PostSalesReceipt($empId, $date, $amount);
+    })->purpose('Use Case 4: Posting a Sales Receipt');

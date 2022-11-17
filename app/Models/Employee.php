@@ -8,6 +8,7 @@ class Employee extends Model
 {
     use HasFactory;
 
+    // todo change these types. user inputs are not related to db enums
     public const SALARY_TYPE_HOURLY_RATE = 'H';
     public const SALARY_TYPE_MONTHLY_SALARY = 'S';
     public const SALARY_TYPE_COMMISSION_SALARY = 'C';
@@ -27,4 +28,9 @@ class Employee extends Model
         'commission_rate',
         'monthly_salary',
     ];
+
+    public function getSalaryType(): string
+    {
+        return $this->salary_type;
+    }
 }

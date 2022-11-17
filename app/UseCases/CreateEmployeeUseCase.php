@@ -44,6 +44,7 @@ class CreateEmployeeUseCase
                 break;
             default:
                 Assert::that(true)->false('invalid salary type');
+                // todo specific exceptions
         }
 
         $this->repository::create($dto);

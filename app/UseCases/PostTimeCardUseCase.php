@@ -3,28 +3,30 @@
 namespace App\UseCases;
 
 use App\DataTransferObjects\CreateTimeCardDTO;
-use App\Models\Employee;
+use App\Repositories\EmployeeRepository;
 use App\Repositories\TimeCardRepository;
 use Carbon\Carbon;
 
 class PostTimeCardUseCase
 {
-    private TimeCardRepository $repository;
+    private TimeCardRepository $timeCardRepository;
+    private EmployeeRepository $employeeRepository;
 
     public function __construct()
     {
-        $this->repository = new TimeCardRepository();
+        $this->timeCardRepository = new TimeCardRepository();
+        $this->employeeRepository = new EmployeeRepository();
     }
 
     public function execute(int $employeeId, string $date, int $hours): void
     {
-        Employee::findOrFail($employeeId);
+        $this->employeeRepository->findOrFail($employeeId);
 
         $dto = (new CreateTimeCardDTO())
             ->setEmployeeId($employeeId)
             ->setDate(Carbon::parse($date))
             ->setHours($hours);
 
-        $this->repository::create($dto);
+        $this->timeCardRepository::create($dto);
     }
 }
