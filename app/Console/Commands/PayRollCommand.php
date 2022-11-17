@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\UseCases\CreateEmployeeUseCase;
 use App\UseCases\DeleteEmployeeUseCase;
+use App\UseCases\PostTimeCardUseCase;
 
 class PayRollCommand
 {
@@ -22,6 +23,11 @@ class PayRollCommand
     public static function deleteEmployee(int $employeeId): void
     {
         (new DeleteEmployeeUseCase())->execute($employeeId);
+    }
+
+    public static function PostTimeCard(int $empId, string $date, int $hours): void
+    {
+        (new PostTimeCardUseCase())->execute($empId, $date, $hours);
     }
 }
 

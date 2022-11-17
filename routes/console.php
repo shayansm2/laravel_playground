@@ -21,12 +21,18 @@ Artisan::command('inspire', function () {
 
 Artisan::command(
     'AddEmp {empId} {name} {address} {salaryType} {salaryArg1} {salaryArg2=0}',
-    function ($empId, $name, $address, $salaryType, $salaryArg1, $salaryArg2) {
+    function (int $empId, string $name, string $address, string $salaryType, $salaryArg1, $salaryArg2) {
         PayRollCommand::addEmployee($empId, $name, $address, $salaryType, $salaryArg1, $salaryArg2);
-    })->purpose('Add New Employee');
+    })->purpose('Use Case 1: Add New Employee');
 
 Artisan::command(
     'DelEmp {empId}',
-    function ($empId) {
+    function (int $empId) {
         PayRollCommand::deleteEmployee($empId);
-    })->purpose('Deleting an Employee');
+    })->purpose('Use Case 2: Deleting an Employee');
+
+Artisan::command(
+    'TimeCard {empId} {date} {hours}',
+    function (int $empId, string $date, int $hours) {
+        PayRollCommand::PostTimeCard($empId, $date, $hours);
+    })->purpose('Use Case 3: Post a Time Card');
