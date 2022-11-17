@@ -2,9 +2,9 @@
 
 namespace App\UseCases;
 
-use App\DataTransferObjects\Employee\CreateCommissionEmployeeDTO;
-use App\DataTransferObjects\Employee\CreateHourlyEmployeeDTO;
-use App\DataTransferObjects\Employee\CreateSalaryEmployeeDTO;
+use App\DataTransferObjects\CreateCommissionEmployeeDTO;
+use App\DataTransferObjects\CreateHourlyEmployeeDTO;
+use App\DataTransferObjects\CreateSalaryEmployeeDTO;
 use App\Models\Employee;
 use App\Repositories\EmployeeRepository;
 

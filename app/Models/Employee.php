@@ -3,12 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-/**
- * @method static self find(int $id)
- * @method static void create(array $data)
- */
 
 class Employee extends Model
 {

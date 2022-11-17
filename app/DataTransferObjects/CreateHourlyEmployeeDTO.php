@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTransferObjects\Employee;
+namespace App\DataTransferObjects;
 
 class CreateHourlyEmployeeDTO extends AbstractCreateEmployeeDTO
 {
