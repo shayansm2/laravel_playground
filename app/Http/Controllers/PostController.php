@@ -7,6 +7,16 @@ use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
+    public $class, $previousURL;
+
+    public function __construct(Request $request)
+    {
+        if ($request->query->get('debug') === 'true') {
+            $this->class = class_basename($this);
+            $this->previousURL = url()->previous();
+        };
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRoutesController;
 use App\Models\User;
@@ -100,6 +101,7 @@ Route::get('/keyboard/', [TestController::class, 'keyboard']);
 Route::prefix('cms')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/{post:slug}', [HomeController::class, 'post']);
+    Route::resource('posts', PostController::class);
 });
 
 Route::get('/playground', function () {
