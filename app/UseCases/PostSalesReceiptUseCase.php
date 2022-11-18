@@ -22,7 +22,7 @@ class PostSalesReceiptUseCase
 
     public function execute(int $employeeId, string $date, int $amount): void
     {
-        $employee = $this->employeeRepository->findOrFail($employeeId);
+        $employee = $this->employeeRepository::findOrFail($employeeId);
 
         // todo remove dependency to App\Models\Employee
         Assert::that($employee->getSalaryType())->eq(Employee::SALARY_TYPE_COMMISSION_SALARY);

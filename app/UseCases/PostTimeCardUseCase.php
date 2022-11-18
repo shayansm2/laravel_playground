@@ -20,7 +20,7 @@ class PostTimeCardUseCase
 
     public function execute(int $employeeId, string $date, int $hours): void
     {
-        $this->employeeRepository->findOrFail($employeeId);
+        $this->employeeRepository::findOrFail($employeeId);
 
         $dto = (new CreateTimeCardDTO())
             ->setEmployeeId($employeeId)

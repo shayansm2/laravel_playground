@@ -25,7 +25,7 @@ class EmployeeRepository
         Employee::destroy($id);
     }
 
-    public function findOrFail(int $id): Employee
+    public static function findOrFail(int $id): Employee
     {
         $employee = Employee::findOrFail($id);
         /** @var Employee $employee */
