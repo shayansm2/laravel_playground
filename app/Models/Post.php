@@ -25,4 +25,19 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+//    public function user(): Relations\BelongsTo
+//    {
+//        return $this->belongsTo(User::class);
+//    }
+//
+//    public function comments(): Relations\MorphMany
+//    {
+//        return $this->morphMany(Comment::class, 'commentable');
+//    }
+//
+//    public function rates(): Relations\MorphMany
+//    {
+//        return $this->morphMany(Rate::class, 'rateable');
+//    }
 }

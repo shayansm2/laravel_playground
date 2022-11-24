@@ -14,4 +14,9 @@ class Comment extends Model
     {
         return $this->belongsTo(Post::class);
     }
+
+//    public function commentable(): Relations\MorphTo
+//    {
+//        return $this->morphTo();
+//    }
 }
