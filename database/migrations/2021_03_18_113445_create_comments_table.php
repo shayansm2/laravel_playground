@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        return;
-
-        Schema::create('courses', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->tinyInteger('required_percent');
+            $table->foreignId('post_id');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('comments');
     }
 };

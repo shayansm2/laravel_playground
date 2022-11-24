@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations;
 
 /**
  * @method static self find(int $id)
@@ -62,8 +63,18 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function discount()
+    public function discount(): Relations\HasOne
     {
         return $this->hasOne(Discount::class);
+    }
+
+    public function courses(): Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'course_user');
+    }
+
+    public function questions(): Relations\HasMany
+    {
+        return $this->hasMany(Question::class);
     }
 }
