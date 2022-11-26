@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,13 +17,10 @@ class RAM extends Model
         'capacity',
     ];
 
-    public function getPriceAttribute()
+    public function price(): Attribute
     {
-        return $this->getCapacity() * 20;
-    }
-
-    private function getCapacity()
-    {
-        return $this->capacity;
+        return Attribute::get(
+            fn ($value, $attributes) => $attributes['capacity'] * 20,
+        );
     }
 }
