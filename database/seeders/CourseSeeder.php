@@ -15,7 +15,7 @@ class CourseSeeder extends Seeder
         foreach ($percents as $percent) {
             DB::table('courses')->insert([
                 'title' => Str::random(10),
-                'required_percent' => $percent,
+//                'required_percent' => $percent,
             ]);
         }
     }

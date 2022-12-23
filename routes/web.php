@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TestController;
@@ -99,7 +100,7 @@ Route::prefix('request-validation')->group(function () {
 Route::get('/keyboard/', [TestController::class, 'keyboard']);
 
 Route::prefix('cms')->group(function () {
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'indexAction']);
     Route::get('/{post:slug}', [HomeController::class, 'post']);
     Route::resource('posts', PostController::class);
 });
@@ -131,3 +132,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/', [HomeController::class, 'index']);
+Route::post('/download', [DownloadsController::class, 'download']);

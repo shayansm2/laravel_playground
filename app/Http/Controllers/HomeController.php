@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    use Utils;
+
     public $class, $previousURL;
 
     public function __construct(Request $request)
@@ -18,7 +20,14 @@ class HomeController extends Controller
         };
     }
 
-    public function index(Request $request)
+    public function index()
+    {
+        $user = $this->getUser();
+        $limit = $this->getLimit();
+        return view('index', compact('user', 'limit'));
+    }
+
+    public function indexAction(Request $request)
     {
         HomePageVisited::dispatch($request->ip(), $request->userAgent());
         $posts = Post::all();
