@@ -62,5 +62,14 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "dev-package": {
+            "type": "path",
+            "url": "packages/laravel-health",
+            "options": {
+                "symlink": true
+            }
+        }
+    }
 }
