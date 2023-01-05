@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
@@ -14,7 +17,8 @@
         "laravel/jetstream": "*",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.5"
+        "livewire/livewire": "^2.5",
+        "queracollege/laravel-health": "*"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
@@ -63,13 +67,10 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": {
-        "dev-package": {
+    "repositories": [
+        {
             "type": "path",
-            "url": "packages/laravel-health",
-            "options": {
-                "symlink": true
-            }
+            "url": "dev-package/laravel-health"
         }
-    }
+    ]
 }

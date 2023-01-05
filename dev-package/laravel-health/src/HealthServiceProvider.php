@@ -25,5 +25,9 @@ class HealthServiceProvider extends ServiceProvider
         });
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'health');
+
+        $this->publishes([
+            __DIR__ . '/../resources/assets' => public_path('vendor/health'),
+        ], 'health');
     }
 }
