@@ -3,8 +3,8 @@
 namespace QueraCollege\LaravelHealth\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use QueraCollege\LaravelHealth\Http\Views\DatabaseHealthView;
-use QueraCollege\LaravelHealth\Http\Views\RoutesHealthVIew;
+use QueraCollege\LaravelHealth\Views\DatabaseHealthView;
+use QueraCollege\LaravelHealth\Views\RoutesHealthVIew;
 
 class HealthController extends Controller
 {

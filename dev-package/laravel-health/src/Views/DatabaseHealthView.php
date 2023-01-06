@@ -1,6 +1,6 @@
 <?php
 
-namespace QueraCollege\LaravelHealth\Http\Views;
+namespace QueraCollege\LaravelHealth\Views;
 
 use Exception;
 use Illuminate\Support\Facades\Artisan;
