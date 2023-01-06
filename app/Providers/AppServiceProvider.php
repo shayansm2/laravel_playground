@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Jobs\SendDownloadLinks;
+use App\Services\Message;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
@@ -23,7 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-//        $this->app->bind('Message', Message::class);
+        $this->app->bind('Message', function($app, $param) {
+            return new Message($param[0]);
+        });
     }
 
     /**
@@ -31,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         RateLimiter::for(
             'downloads',
