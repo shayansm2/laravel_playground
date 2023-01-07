@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\SocialFacade;
 use App\Jobs\SendDownloadLinks;
 use App\Services\Message;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -26,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind('Message', function($app, $param) {
             return new Message($param[0]);
+        });
+
+        $this->app->bind('social', function () {
+            return new SocialFacade();
         });
     }
 
