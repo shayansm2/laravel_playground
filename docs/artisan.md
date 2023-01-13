@@ -47,6 +47,7 @@ php artisan <command>
 | `make:event EventName`                      | create an event                                             |
 | `make:listener ListenerName`                | create a listener                                           |
 | `make:job JobName`                          | create a job                                                |
+| `make:resource ResourceName`                | create a resource (object view)                             |
 
 ### file maker commands (module)
 
