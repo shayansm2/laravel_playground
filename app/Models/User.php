@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Database\Factories\UserFactory;
+use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations;
  * @method static self find(int $id)
  */
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasLocalePreference
 {
     use HasApiTokens;
     use HasFactory;
@@ -90,8 +91,18 @@ class User extends Authenticatable
         return UserFactory::new();
     }
 
-//    public function posts(): Relations\HasMany
-//    {
-//        return $this->hasMany(Post::class);
-//    }
+    public function posts(): Relations\HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function orders(): Relations\HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function preferredLocale()
+    {
+        return $this->locale;
+    }
 }
